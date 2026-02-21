@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Fifteen Puzzle</string>
+    <string name="_win_icon_description">Win Dialog Icon</string>
+    <string name="title">15 Puzzle</string>
+    <string name="timer">Temporizador:</string>
+    <string name="win_dialog_title">FELICIDADES!</string>
+    <string name="exit">Salir</string>
+    <string name="restart">Jugar de nuevo</string>
+</resources>
