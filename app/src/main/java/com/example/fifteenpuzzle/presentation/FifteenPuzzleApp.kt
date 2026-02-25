@@ -1,7 +1,6 @@
 package com.example.fifteenpuzzle.presentation
 
 import android.content.res.Configuration
-import android.view.Surface
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -71,7 +70,7 @@ fun FifteenPuzzleApp() {
             style = MaterialTheme.typography.headlineLarge,
         )
         Text(
-            text = stringResource(R.string.timer) + " " + formattedTime,
+            text = stringResource(R.string.timer, formattedTime),
             style = MaterialTheme.typography.titleLarge
         )
         Spacer(modifier = Modifier.padding(16.dp))
@@ -106,14 +105,14 @@ fun FifteenPuzzleApp() {
             }
         ) {
             Text(
-                text = if (init == 0) "Comenzar" else "Reiniciar",
+                text = if (init == 0) stringResource(R.string.start) else stringResource(R.string.restart),
                 color = MaterialTheme.colorScheme.onPrimary
             )
         }
         if (showDialog) {
             WinDialog(
                 title = stringResource(R.string.win_dialog_title),
-                text = "Ganaste en $formattedTime segundos!",
+                text = stringResource(R.string.win_dialog_desc, formattedTime),
                 image = painterResource(R.drawable._win_icon),
                 imageDescription = stringResource(R.string._win_icon_description),
                 onDismissRequest = { showDialog = false },
@@ -130,7 +129,7 @@ fun FifteenPuzzleApp() {
                     timerStart = true
                     shuffleBoard(list, 4)
                 },
-                onConfirmText = stringResource(R.string.restart)
+                onConfirmText = stringResource(R.string.new_game)
             )
         }
     }
